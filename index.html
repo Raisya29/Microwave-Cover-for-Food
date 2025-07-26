@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microwave Cover for Food | Household Needs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1b4332',
+                        secondary: '#2d5a3d',
+                        accent: '#d4af37',
+                        cream: '#f5f5dc',
+                        light: '#ffffff',
+                    },
+                    fontFamily: {
+                        heading: ['Cormorant Garamond', 'serif'],
+                        body: ['Open Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes slideIn {
+            from { transform: translateX(100%); }
+            to { transform: translateX(0); }
+        }
+        
+        @keyframes slideOut {
+            from { transform: translateX(0); }
+            to { transform: translateX(100%); }
+        }
+        
+        .social-proof-popup {
+            animation: slideIn 0.5s ease-out forwards;
+        }
+        
+        .social-proof-popup.hide {
+            animation: slideOut 0.5s ease-out forwards;
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(27, 67, 50, 0.8) 0%, rgba(45, 90, 61, 0.8) 50%, rgba(212, 175, 55, 0.6) 100%);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(to right, #1b4332, #2d5a3d);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(27, 67, 50, 0.3);
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(to right, #2d5a3d, #3a6b4a);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(27, 67, 50, 0.4);
+        }
+        
+        .btn-accent {
+            background: linear-gradient(to right, #d4af37, #e8c350);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
+            color: #1b4332;
+        }
+        
+        .btn-accent:hover {
+            background: linear-gradient(to right, #e8c350, #f0d16f);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(212, 175, 55, 0.4);
+        }
+        
+        .feature-icon {
+            background: linear-gradient(135deg, rgba(45, 90, 61, 0.1) 0%, rgba(212, 175, 55, 0.1) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        .zoom-effect {
+            transition: transform 0.3s ease;
+        }
+        
+        .zoom-effect:hover {
+            transform: scale(1.05);
+        }
+        
+        .price-card {
+            transition: all 0.3s ease;
+            border: 2px solid #d4af37;
+        }
+        
+        .price-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .recommended {
+            position: relative;
+            border: 3px solid #d4af37;
+        }
+        
+        .recommended::after {
+            content: "PALING EKONOMIS";
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background: #d4af37;
+            color: #1b4332;
+            font-weight: bold;
+            font-size: 0.75rem;
+            padding: 3px 10px;
+            border-radius: 20px;
+        }
+        
+        .sticky-cta {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(212, 175, 55, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+        }
+        
+        .countdown-box {
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        .text-shadow {
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        
+        .leaf-divider {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M1200 0L0 0 598.97 114.72 1200 0z' fill='%23f5f5dc'%3E%3C/path%3E%3C/svg%3E");
+            background-size: cover;
+            height: 80px;
+        }
+    </style>
+</head>
+<body class="bg-cream font-body text-primary">
+    <!-- Social Proof Popup -->
+    <div id="socialProof" class="fixed top-5 right-5 z-50 w-80 max-w-full hidden">
+        <div class="social-proof-popup bg-light rounded-lg shadow-lg p-4 border-l-4 border-accent">
+            <div class="flex items-center">
+                <div class="w-10 h-10 rounded-full bg-accent flex items-center justify-center text-light font-bold text-lg mr-3"></div>
+                <div>
+                    <p class="font-semibold text-secondary" id="customerName"></p>
+                    <p class="text-sm text-gray-600" id="purchaseInfo"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky CTA Button -->
+    <div class="sticky-cta fixed bottom-5 right-5 z-40">
+        <a href="#order" class="btn-accent py-3 px-6 rounded-full font-bold text-lg shadow-lg flex items-center">
+            <i class="fas fa-shopping-cart mr-2"></i> PESAN SEKARANG
+        </a>
+    </div>
+
+    <!-- Header -->
+    <header class="bg-primary text-light py-4 px-6 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="https://cdn.techcloudly.com/image/037a84a7aa0fb0a4a32b77b4cb1bfa539f1d4c9a.png" alt="Household Needs Logo" class="h-12 w-12 mr-3">
+                <div>
+                    <h1 class="font-heading text-2xl font-bold">Household Needs</h1>
+                    <p class="text-cream text-sm">Solusi Rumah Tangga Premium</p>
+                </div>
+            </div>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#features" class="hover:text-accent transition">Fitur</a>
+                <a href="#gallery" class="hover:text-accent transition">Galeri</a>
+                <a href="#pricing" class="hover:text-accent transition">Harga</a>
+                <a href="#testimonials" class="hover:text-accent transition">Review</a>
+            </nav>
+            <div class="md:hidden">
+                <button id="menuToggle" class="text-light">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://cdn.techcloudly.com/image/9abe62951305bd7fe4c94a9d98d9807fc5b29a28-600.jpeg')"></div>
+        <div class="absolute inset-0 hero-gradient"></div>
+        
+        <div class="container mx-auto relative z-10 px-4">
+            <div class="max-w-2xl">
+                <div class="bg-white/20 glass-effect p-8 rounded-xl backdrop-blur-sm">
+                    <h1 class="font-heading text-5xl md:text-6xl font-bold text-light mb-4 text-shadow">Microwave Cover for Food</h1>
+                    <p class="text-xl text-light mb-8 max-w-lg">Jadikan sisa makanan terasa lebih nikmat dengan penutup microwave 2-in-1 yang jenius ini. Menjaga microwave Anda tetap bersih sekaligus menjaga makanan Anda tetap lembap!</p>
+                    
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#order" class="btn-accent py-3 px-8 rounded-lg font-bold text-lg inline-flex items-center">
+                            PESAN SEKARANG <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                        <a href="#video" class="bg-primary/70 hover:bg-primary/90 py-3 px-8 rounded-lg font-bold text-light text-lg inline-flex items-center transition">
+                            <i class="fas fa-play-circle mr-2"></i> LIHAT DEMO
+                        </a>
+                    </div>
+                    
+                    <div class="mt-8 flex flex-wrap gap-4">
+                        <div class="bg-light/80 rounded-lg py-2 px-4 flex items-center">
+                            <i class="fas fa-truck text-accent text-xl mr-2"></i>
+                            <span>Gratis Ongkir</span>
+                        </div>
+                        <div class="bg-light/80 rounded-lg py-2 px-4 flex items-center">
+                            <i class="fas fa-shield-alt text-accent text-xl mr-2"></i>
+                            <span>Garansi 1 Minggu</span>
+                        </div>
+                        <div class="bg-light/80 rounded-lg py-2 px-4 flex items-center">
+                            <i class="fas fa-credit-card text-accent text-xl mr-2"></i>
+                            <span>Bayar di Tempat</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="leaf-divider absolute bottom-0 left-0 right-0 w-full"></div>
+    </section>
+
+    <!-- USP Banner -->
+    <section class="bg-secondary py-6">
+        <div class="container mx-auto">
+            <div class="flex justify-center">
+                <p class="text-2xl font-heading font-bold text-light text-center">
+                    <span class="text-accent">BELI LEBIH BANYAK</span> &nbsp; HEMAT LEBIH BANYAK
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 bg-cream">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-4xl font-bold mb-4">Solusi Pintar untuk Microwave Anda</h2>
+                <p class="text-lg max-w-2xl mx-auto">Microwave Cover untuk Food dari Household Needs dirancang khusus untuk menjaga kebersihan microwave dan kelembapan makanan Anda</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-light rounded-xl p-6 shadow-md zoom-effect">
+                    <div class="feature-icon w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-shield-alt text-2xl text-accent"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold mb-3 text-center">Cegah Percikan</h3>
+                    <p class="text-center">Mencegah percikan minyak dan saus yang bisa membuat microwave kotor dan berkerak</p>
+                </div>
+                
+                <div class="bg-light rounded-xl p-6 shadow-md zoom-effect">
+                    <div class="feature-icon w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-tint text-2xl text-accent"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold mb-3 text-center">Jaga Kelembapan</h3>
+                    <p class="text-center">Mempertahankan kelembapan makanan sehingga tidak kering dan tetap nikmat saat disantap</p>
+                </div>
+                
+                <div class="bg-light rounded-xl p-6 shadow-md zoom-effect">
+                    <div class="feature-icon w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-recycle text-2xl text-accent"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold mb-3 text-center">Ramah Lingkungan</h3>
+                    <p class="text-center">Terbuat dari bahan food grade yang aman, bebas BPA, dan bisa digunakan berulang kali</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Demo -->
+    <section id="video" class="py-16 bg-secondary">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-10">
+                <h2 class="font-heading text-4xl font-bold text-light mb-4">Cara Kerja Microwave Cover</h2>
+                <p class="text-light/80 max-w-2xl mx-auto">Lihat bagaimana Microwave Cover kami menjaga makanan tetap lembap saat dipanaskan</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto glass-effect rounded-xl overflow-hidden shadow-xl">
+                <div class="aspect-w-16 aspect-h-9">
+                    <img src="https://cdn.techcloudly.com/image/4ce396d4787c6ca45b855dda9c73cf4b09fb54ee.gif" alt="Demo Microwave Cover" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-16 bg-cream">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-4xl font-bold mb-4">Galeri Produk</h2>
+                <p class="text-lg max-w-2xl mx-auto">Microwave Cover yang elegan dan fungsional untuk dapur modern Anda</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <div class="rounded-xl overflow-hidden shadow-lg zoom-effect">
+                    <img src="https://cdn.techcloudly.com/image/6cd4efec0bfd4c19f7e21c174dce2729ea1bcfdf.jpeg" alt="Microwave Cover 1" class="w-full h-64 object-cover">
+                </div>
+                <div class="rounded-xl overflow-hidden shadow-lg zoom-effect">
+                    <img src="https://cdn.techcloudly.com/image/d8ca2e42ed9e71b0bd6b9de5dcf684c0232713a6.jpeg" alt="Microwave Cover 2" class="w-full h-64 object-cover">
+                </div>
+                <div class="rounded-xl overflow-hidden shadow-lg zoom-effect">
+                    <img src="https://cdn.techcloudly.com/image/2615b793e3f5a4738671a668fb42c1068651106b.jpeg" alt="Microwave Cover 3" class="w-full h-64 object-cover">
+                </div>
+                <div class="rounded-xl overflow-hidden shadow-lg zoom-effect">
+                    <img src="https://cdn.techcloudly.com/image/9010ee63bde9c2129c7e3f3a8b7eab3a9b30be22.jpeg" alt="Microwave Cover 4" class="w-full h-64 object-cover">
+                </div>
+                <div class="rounded-xl overflow-hidden shadow-lg zoom-effect">
+                    <img src="https://cdn.techcloudly.com/image/037a84a7aa0fb0a4a32b77b4cb1bfa539f1d4c9a.png" alt="Microwave Cover 5" class="w-full h-64 object-contain bg-white p-4">
+                </div>
+                <div class="rounded-xl overflow-hidden shadow-lg bg-secondary flex items-center justify-center p-6">
+                    <div class="text-center">
+                        <h3 class="font-heading text-2xl font-bold text-light mb-2">Cocok untuk Semua Microwave</h3>
+                        <p class="text-light/80">Desain universal yang bisa digunakan untuk berbagai ukuran microwave</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-16 bg-primary">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-4xl font-bold text-light mb-4">Penawaran Spesial Terbatas</h2>
+                <p class="text-light/80 max-w-2xl mx-auto">Manfaatkan promo spesial kami sebelum kehabisan stok</p>
+                
+                <div class="mt-8 bg-secondary inline-flex items-center py-2 px-4 rounded-lg">
+                    <i class="fas fa-clock text-accent mr-2"></i>
+                    <span class="font-bold">PROMO BERAKHIR DALAM:</span>
+                    <div id="countdown" class="ml-4 flex gap-2">
+                        <div class="countdown-box px-3 py-1 rounded-md">
+                            <span class="font-bold text-accent text-xl" id="hours">02</span>
+                            <span class="text-light text-sm">Jam</span>
+                        </div>
+                        <div class="countdown-box px-3 py-1 rounded-md">
+                            <span class="font-bold text-accent text-xl" id="minutes">30</span>
+                            <span class="text-light text-sm">Menit</span>
+                        </div>
+                        <div class="countdown-box px-3 py-1 rounded-md">
+                            <span class="font-bold text-accent text-xl" id="seconds">45</span>
+                            <span class="text-light text-sm">Detik</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Paket 1 -->
+                <div class="price-card bg-light rounded-2xl p-6">
+                    <div class="text-center mb-6">
+                        <h3 class="font-heading text-2xl font-bold">Paket 1</h3>
+                        <p class="text-accent font-bold">BELI 1 GRATIS 1</p>
+                    </div>
+                    
+                    <div class="flex justify-center items-baseline mb-4">
+                        <span class="text-2xl font-bold text-secondary">Rp 164.000</span>
+                        <span class="ml-2 text-gray-500 line-through">Rp 175.000</span>
+                    </div>
+                    
+                    <ul class="mb-6 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-accent mr-2"></i>
+                            <span>2 Penutup Microwave Premium</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-accent mr-2"></i>
+                            <span>Ukuran Universal</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-accent mr-2"></i>
+                            <span>Garansi 1 Minggu</span>
+                        </li>
+                    </ul>
+                    
+                    <a href="#order" class="btn-primary text-light py-3 px-6 rounded-lg font-bold text-center block">
+                        PESAN PAKET INI
+                    </a>
+                </div>
+                
+                <!-- Paket 2 -->
+                <div class="price-card bg-light rounded-2xl p-6 recommended">
+                    <div class="text-center mb-6">
+                        <h3 class="font-heading text-2xl font-bold">Paket 2</h3>
+                        <p class="text-accent font-bold">BELI 2 GRATIS 2</p>
+                    </div>
+                    
+                    <div class="flex justify-center items-baseline mb-4">
+                        <span class="text-2xl font-bold text-secondary">Rp 245.000</span>
+                        <span class="ml-2 text-gray-500 line-through">Rp 350.000</span>
+                    </div>
+                    
+                    <ul class="mb-6 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-accent mr-2"></i>
+                            <span>4 Penutup Microwave Premium</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-accent mr-2"></i>
+                            <span>Ukuran Universal</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-accent mr-2"></i>
+                            <span>Garansi 1 Minggu</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-accent mr-2"></i>
+                            <span>Gratis Sarung Pelindung</span>
+                        </li>
+                    </ul>
+                    
+                    <a href="#order" class="btn-accent py-3 px-6 rounded-lg font-bold text-center block">
+                        PAKET TERPOPULER
+                    </a>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-secondary/50 rounded-xl p-6 max-w-4xl mx-auto">
+                <div class="flex items-start">
+                    <div class="bg-accent text-primary w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mr-3">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-light text-xl mb-2">Bonus Spesial Setiap Pembelian!</h3>
+                        <p class="text-light/90">Dapatkan E-Book "50 Resep Makanan Microwave Sehat" gratis untuk setiap pembelian paket apapun. E-Book ini berisi resep mudah dan sehat yang bisa Anda buat dengan microwave menggunakan Microwave Cover kami.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Form -->
+    <section id="order" class="py-16 bg-cream">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-4xl font-bold mb-4">Pesan Sekarang</h2>
+                <p class="text-lg max-w-2xl mx-auto">Isi formulir di bawah ini dan dapatkan Microwave Cover Premium Anda hari ini juga!</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto glass-effect rounded-2xl p-6 md:p-8 shadow-xl">
+                <!-- OrderOnline Embed Code -->
+                <div class="ooef">
+                    <form class="orderonline-embed-form" data-username="vera" data-product-slug="microwave-cover-for-food" data-product-id="6884dfb4412a56792506c1a7" id="oo-embed-form-microwave-cover-for-food-5229" data-origin="orderonline">
+                        <div class="ooef-loader"><style>.ooef-loader{visibility: hidden;opacity: 0;position: absolute;left: 0;right: 0;top: 0;bottom: 0;display: flex;justify-content: center;align-items: center;flex-direction: column;animation: ooLoadingIn 10s ease;-webkit-animation: ooLoadingIn 10s ease;animation-fill-mode: forwards;overflow: hidden}@keyframes ooLoadingIn{0%{visibility: hidden;opacity: 0}20%{visibility: visible;opacity: 0}100%{visibility: visible;opacity: 1}}@-webkit-keyframes ooLoadingIn{0%{visibility: hidden;opacity: 0}20%{visibility: visible;opacity: 0}100%{visibility: visible;opacity: 1}}.ooef-loader>div,.ooef-loader>div:after{border-radius: 50%;width: 2.5rem;height: 2.5rem}.ooef-loader>div{font-size: 10px;position: relative;text-indent: -9999em;border: .25rem solid #f5f5f5;border-left: .25rem solid #55c4cf;-webkit-transform: translateZ(0);-ms-transform: translateZ(0);transform: translateZ(0);-webkit-animation: ooLoading 1.1s infinite linear;animation: ooLoading 1.1s infinite linear}.ooef-loader.error>div{border-left: .25rem solid #ff4500;animation-duration: 5s}@-webkit-keyframes ooLoading{0%{-webkit-transform: rotate(0);transform: rotate(0)}100%{-webkit-transform: rotate(360deg);transform: rotate(360deg)}}@keyframes ooLoading{0%{-webkit-transform: rotate(0);transform: rotate(0)}100%{-webkit-transform: rotate(360deg);transform: rotate(360deg)}}</style><div aria-live="polite" role="status"><div>Loading...</div></div></div>
+                    </form>
+                </div>
+                <script>
+                    if (typeof xLogError != 'function') {
+                        var xLogError = function (error) {
+                            var req = new XMLHttpRequest();
+                            var payload = JSON.stringify({ url: document.location.href, line: error.line, stack: error.stack });
+                            var params = 'message=' + encodeURIComponent(error.name) + '&payload=' + encodeURIComponent(payload) + '&type=embed&level=error';
+                            req.open('POST', 'https://api.orderonline.id/log', true);
+                            req.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                            req.send(params);
+                        };
+                    }
+                    try {
+                        if (typeof xEmbedScript != 'function') {
+                            var xEmbedScript = function () {
+                                !function(w, d, e, v, id, t, s) {
+                                    if (d.getElementById(id)) return;
+                                    t = d.createElement(e);t.async = !0;t.src = v;t.id = id;
+                                    s = d.getElementsByTagName(e)[0];
+                                    s.parentNode.insertBefore(t, s);
+                                }(window, document, 'script', 'https://cdn.orderonline.id/js/embed-v2-slim.min.js?v=8.0.4', 'oo-embed-js');
+                            };
+                        }
+                        if (typeof xEmbedInit != 'function') {
+                            var xEmbedInit = function (w, n) {
+                                if (w.ooe) return;
+                                n = w.ooe = function() {
+                                    n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                                };
+                                if (!w._ooe) w._ooe = n;
+                                n.push = n;n.loaded = !0;n.version = '8.0.4';n.queue = [];
+                            };
+                        }
+                        xEmbedInit(window);
+                        ooe('setup', 'redirect', 'https://vera.orderonline.id');
+                        ooe('init', '5f1a7807a9bf807d6c63d963', '6884dfb4412a56792506c1a7', '6884dfb4412a56792506c1a8', 'oo-embed-form-microwave-cover-for-food-5229', {"mode":"page","action":"Klik untuk pemesanan","title":"Form Pemesanan","triggerPixel":true,"triggerGtm":true});
+                        if (!window.jQuery) {
+                            !function(w, d, e, v, id, t, s) {
+                                if (d.getElementById(id)) return;
+                                t = d.createElement(e);t.async = !0;t.src = v;t.id = id;
+                                t.addEventListener('load', xEmbedScript);
+                                s = d.getElementsByTagName(e)[0];
+                                s.parentNode.insertBefore(t, s);
+                            }(window, document, 'script', 'https://cdn.orderonline.id/js/vendor/jquery.min.js', 'oo-embed-jquery');
+                        } else {
+                            xEmbedScript();
+                        }
+                    } catch (e) {
+                        xLogError(e);
+                        throw e;
+                    }
+                </script>
+                <!-- End OrderOnline Embed Code -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-light py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-8 md:mb-0">
+                    <div class="flex items-center mb-4">
+                        <img src="https://cdn.techcloudly.com/image/037a84a7aa0fb0a4a32b77b4cb1bfa539f1d4c9a.png" alt="Household Needs Logo" class="h-12 w-12 mr-3">
+                        <h3 class="font-heading text-2xl font-bold">Household Needs</h3>
+                    </div>
+                    <p class="max-w-xs text-light/80">Solusi rumah tangga premium untuk membuat hidup Anda lebih mudah dan efisien.</p>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h4 class="font-bold text-lg mb-4">Kontak Kami</h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <i class="fas fa-envelope mr-2 text-accent"></i>
+                                <span>cs@householdneeds.id</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fab fa-whatsapp mr-2 text-accent"></i>
+                                <span>+62 8953 8406 0107</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-bold text-lg mb-4">Informasi</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="hover:text-accent transition">Tentang Kami</a></li>
+                            <li><a href="#" class="hover:text-accent transition">Kebijakan Privasi</a></li>
+                            <li><a href="#" class="hover:text-accent transition">Syarat & Ketentuan</a></li>
+                            <li><a href="#" class="hover:text-accent transition">FAQ</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-bold text-lg mb-4">Metode Pembayaran</h4>
+                            <div class="bg-light/10 p-2 rounded-lg">
+                                COD & BANK TRANSFER
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-light/20 mt-12 pt-6 text-center text-light/60">
+                <p>&copy; 2025 Household Needs. Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Social Proof Popup
+        const customerNames = ['Vina', 'Dina', 'Kartika', 'Lestari', 'Putri', 'Maya Sari', 'Rani', 'Permata', 'Lestari F'];
+        const customerCities = ['Jakarta', 'Surabaya', 'Bandung', 'Medan', 'Bekasi', 'Tangerang', 'Depok', 'Semarang'];
+        
+        function showSocialProof() {
+            const popup = document.getElementById('socialProof');
+            const customerName = document.getElementById('customerName');
+            const purchaseInfo = document.getElementById('purchaseInfo');
+            
+            if (!popup) return;
+            
+            // Generate random data
+            const randomName = customerNames[Math.floor(Math.random() * customerNames.length)];
+            const randomCity = customerCities[Math.floor(Math.random() * customerCities.length)];
+            const randomMinutes = Math.floor(Math.random() * 15) + 1;
+            
+            // Set content
+            customerName.textContent = randomName;
+            purchaseInfo.textContent = `dari ${randomCity} baru saja memesan Microwave Cover for Food (${randomMinutes} menit yang lalu)`;
+            
+            // Show popup
+            popup.classList.remove('hidden');
+            
+            // Set avatar initial
+            const avatar = popup.querySelector('.rounded-full');
+            if (avatar) {
+                avatar.textContent = randomName.charAt(0);
+            }
+            
+            // Auto hide after 5 seconds
+            setTimeout(() => {
+                if (!popup.matches(':hover')) {
+                    popup.classList.add('hidden');
+                }
+            }, 5000);
+        }
+        
+        // Manage popup hover
+        document.getElementById('socialProof').addEventListener('mouseenter', function() {
+            clearTimeout(this.hideTimeout);
+        });
+        
+        document.getElementById('socialProof').addEventListener('mouseleave', function() {
+            this.hideTimeout = setTimeout(() => {
+                this.classList.add('hidden');
+            }, 1000);
+        });
+        
+        // Initialize popup interval
+        let popupInterval = setInterval(showSocialProof, 8000);
+        
+        // Countdown Timer
+        function updateCountdown() {
+            const hoursElem = document.getElementById('hours');
+            const minutesElem = document.getElementById('minutes');
+            const secondsElem = document.getElementById('seconds');
+            
+            let hours = parseInt(hoursElem.textContent);
+            let minutes = parseInt(minutesElem.textContent);
+            let seconds = parseInt(secondsElem.textContent);
+            
+            seconds--;
+            
+            if (seconds < 0) {
+                seconds = 59;
+                minutes--;
+                
+                if (minutes < 0) {
+                    minutes = 59;
+                    hours--;
+                    
+                    if (hours < 0) {
+                        // Reset timer
+                        hours = 2;
+                        minutes = 30;
+                        seconds = 0;
+                    }
+                }
+            }
+            
+            hoursElem.textContent = hours.toString().padStart(2, '0');
+            minutesElem.textContent = minutes.toString().padStart(2, '0');
+            secondsElem.textContent = seconds.toString().padStart(2, '0');
+        }
+        
+        setInterval(updateCountdown, 1000);
+        
+        // Mobile menu toggle
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            const nav = document.querySelector('nav');
+            nav.classList.toggle('hidden');
+            nav.classList.toggle('flex');
+            nav.classList.toggle('flex-col');
+            nav.classList.toggle('absolute');
+            nav.classList.toggle('top-16');
+            nav.classList.toggle('right-4');
+            nav.classList.toggle('bg-primary');
+            nav.classList.toggle('p-4');
+            nav.classList.toggle('rounded-lg');
+            nav.classList.toggle('space-y-4');
+        });
+        
+        // Smooth scrolling for anchors
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
